@@ -1,6 +1,6 @@
 <?php namespace MGBlog\Http\Controllers;
 
-class HomeController extends BaseController {
+class ResumeController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -14,19 +14,10 @@ class HomeController extends BaseController {
 	*/
 
 	/**
-	 * @get("/", as="home")
+	 * @get("resume", as="resume")
 	 */
 	public function index()
 	{
-		return view('home');
+		return view('resume.home');
 	}
-
-	/**
-	 * @get("about", as="home")
-	 */
-	public function about()
-	{
-		return view('site.about', ['noJumbotron' => true]);
-	}
-
 }

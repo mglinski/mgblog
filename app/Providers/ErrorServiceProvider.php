@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Whoops\Handler\PrettyPageHandler;
+use Whoops\Handler\PlainTextHandler;
 use Whoops\Run;
 
 class ErrorServiceProvider extends ServiceProvider {

@@ -15,20 +15,18 @@
 		@show</title>
 
 		@section('site-head')
-			@include('partials.head')
+			@include('......partials.head')
 		@show
 	</head>
 
 	<body>
 		<!-- Top Site Nav -->
-		@include('partials.top-nav')
-
-		<!-- Site Header -->
-		@if(!isset($noJumbotron))
-			@include('partials.site-header')
-		@endif
+		@include('......partials.top-nav')
 
 		<div class="container">
+
+			<!-- Site Header -->
+			@include('......partials.site-header')
 
 			<div class="row">
 
@@ -40,19 +38,16 @@
 
 				<!-- #site-sidebar -->
 				@section('site-sidebar.main')
-					@include('partials.sidebar.main')
+					@include('......partials.sidebar.main')
 				@show
 				<!-- /.site-sidebar -->
 
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 
-		<!-- Site Footer -->
-        @include('partials.site-footer')
-
 		<!-- Site JavaScript -->
 		@section('partials.foot')
-			@include('partials.foot')
+			@include('......partials.foot')
 		@show
 
 	</body>

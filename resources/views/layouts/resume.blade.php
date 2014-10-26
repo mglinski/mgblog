@@ -23,24 +23,25 @@
 		<!-- Top Site Nav -->
 		@include('partials.top-nav')
 
-		<!-- Site Header -->
-		@if(!isset($noJumbotron))
-			@include('partials.site-header')
-		@endif
-
 		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 id="overview" class="page-header">Resume</h1>
+				</div>
+			</div>
 
 			<div class="row">
 
 				<!-- #site-content -->
-				<div class="col-sm-8 blog-main">
+				<div class="col-sm-10 blog-main">
 					@section('site-content')
 					@show
 				</div><!-- /#site-content -->
 
 				<!-- #site-sidebar -->
 				@section('site-sidebar.main')
-					@include('partials.sidebar.main')
+					@include('resume.partials.sidebar')
 				@show
 				<!-- /.site-sidebar -->
 

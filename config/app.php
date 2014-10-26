@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'debug' => true,
+	'debug'           => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url'             => 'http://localhost',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone'        => 'UTC',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale'          => 'en',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,9 +78,9 @@ return [
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key'             => 'YourSecretKey!!!',
 
-	'cipher' => MCRYPT_RIJNDAEL_128,
+	'cipher'          => MCRYPT_RIJNDAEL_128,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'providers' => [
+	'providers'       => [
 
 		/*
 		 * Application Service Providers...
@@ -127,6 +127,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'Illuminate\Html\HtmlServiceProvider',
+
 	],
 
 	/*
@@ -140,7 +142,7 @@ return [
 	|
 	*/
 
-	'manifest' => storage_path().'/framework',
+	'manifest'        => storage_path().'/framework',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -153,7 +155,7 @@ return [
 	|
 	*/
 
-	'aliases' => [
+	'aliases'         => [
 
 		'App'       => 'Illuminate\Support\Facades\App',
 		'Artisan'   => 'Illuminate\Support\Facades\Artisan',
@@ -184,6 +186,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form'      => 'Illuminate\Html\FormFacade',
+		'HTML'      => 'Illuminate\Html\HtmlFacade'
 
 	],
 
