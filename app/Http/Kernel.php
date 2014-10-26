@@ -1,0 +1,43 @@
+<?php namespace MGBlog\Http;
+
+use Exception;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel {
+
+	/**
+	 * The application's HTTP middleware stack.
+	 *
+	 * @var array
+	 */
+	protected $middleware = [
+		'MGBlog\Http\Middleware\UnderMaintenance',
+		'Illuminate\Cookie\Middleware\EncryptCookies',
+		'Illuminate\Cookie\Middleware\AddQueuedCookiesToRequest',
+		'Illuminate\Session\Middleware\ReadSession',
+		'Illuminate\Session\Middleware\WriteSession',
+		'Illuminate\View\Middleware\ShareErrorsFromSession',
+		'MGBlog\Http\Middleware\VerifyCsrfToken',
+	];
+
+	/**
+	 * Handle an incoming HTTP request.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @throws Exception
+	 * @return \Illuminate\Http\Response
+	 */
+	public function handle($request)
+	{
+		try
+		{
+			return parent::handle($request);
+		}
+		catch (Exception $e)
+		{
+			throw $e;
+		}
+	}
+
+}

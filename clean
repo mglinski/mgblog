@@ -1,0 +1,11 @@
+#!/bin/sh
+
+composer dumpautoload
+php artisan optimize
+php artisan migrate
+php artisan route:clear
+php artisan route:cache
+php artisan event:scan
+php artisan auth:clear-reminders
+bower update
+gulp

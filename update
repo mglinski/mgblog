@@ -1,0 +1,15 @@
+#!/bin/sh
+
+git pull
+#php composer.phar selfupdate
+#php composer.phar update
+composer dumpautoload
+php artisan optimize
+php artisan migrate
+php artisan route:clear
+php artisan route:cache
+php artisan event:scan
+php artisan auth:clear-reminders
+bower update
+gulp
+service php5-fpm restart

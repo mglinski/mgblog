@@ -1,0 +1,36 @@
+#
+# Project .gitignore file
+#
+
+
+# NodeJS and NPM Stuff
+/node_modules
+/npm-debug.log
+
+# Framework Build Folders
+/vendor
+/bootstrap/compiled.php
+/resources/assets/vendor
+/storage/framework/views
+/storage/framework/sessions
+ 
+# Composer
+/composer.phar
+/composer.lock
+
+# IDE Stuff
+.DS_Store
+.idea
+artisan.bat
+_ide_helper.php
+
+# Laravel enviroment Config data
+.env
+.env.*
+
+# Public Bower built resources
+/public/img/*
+/public/fonts/*
+/public/css/*
+/public/js/*
+/public/build/*
