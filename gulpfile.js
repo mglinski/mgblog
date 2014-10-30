@@ -31,14 +31,33 @@ var settings = {
 // Path Config for deployments
 var paths = {
 	'dev': {
-		'less': {
-			app: 'app.less',
-			site: 'site.less',
-		},
+		'less': [
+			'app.less',
+		],
 		'js': [
 			settings.vendor + 'jquery/dist/jquery.js',
 			settings.vendor + 'modernizr/modernizr.js',
 			settings.vendor + 'bootstrap/dist/js/bootstrap.js',
+			settings.vendor + 'prism/prism.js',
+			settings.vendor + 'prism/components/prism-bash.js',
+			settings.vendor + 'prism/components/prism-c.js',
+			settings.vendor + 'prism/components/prism-cpp.js',
+			settings.vendor + 'prism/components/prism-clike.js',
+			settings.vendor + 'prism/components/prism-css.js',
+			settings.vendor + 'prism/components/prism-css-extras.js',
+			settings.vendor + 'prism/components/prism-swift.js',
+			settings.vendor + 'prism/components/prism-twig.js',
+			settings.vendor + 'prism/components/prism-http.js',
+			settings.vendor + 'prism/components/prism-ini.js',
+			settings.vendor + 'prism/components/prism-javascript.js',
+			settings.vendor + 'prism/components/prism-markup.js',
+			settings.vendor + 'prism/components/prism-objectivec.js',
+			settings.vendor + 'prism/components/prism-php.js',
+			settings.vendor + 'prism/components/prism-php-extras.js',
+			settings.vendor + 'prism/components/prism-python.js',
+			settings.vendor + 'prism/components/prism-scala.js',
+
+			settings.vendor + 'prism/components/prism-sql.js',
 		],
 		'js_move': [],
 		'fonts': [
@@ -112,7 +131,7 @@ elixir.extend('scriptsRaw', function (src, output)
 elixir(function (mix)
 {
 	mix
-		.less([paths.dev.less.app])
+		.less(paths.dev.less)
 		.scripts(paths.dev.js, settings.assets, paths.production.js)
 		.version([
 			paths.production.css + 'app.css',
