@@ -17,33 +17,7 @@
 		<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 		<h3>Sub-heading</h3>
 		<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-		<pre class="language-php"><code>function getTweets($hash_tag) {
-
-    $url = 'http://search.twitter.com/search.atom?q='.urlencode($hash_tag) ;
-    echo "<p>Connecting to <strong>$url</strong> ...</p>";
-    $ch = curl_init($url);
-    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    $xml = curl_exec ($ch);
-    curl_close ($ch);
-
-    //If you want to see the response from Twitter, uncomment this next part out:
-    //echo "<p>Response:</p>";
-    //echo "<pre>".htmlspecialchars($xml)."</pre>";
-
-    $affected = 0;
-    $twelement = new SimpleXMLElement($xml);
-    foreach ($twelement->entry as $entry) {
-        $text = trim($entry->title);
-        $author = trim($entry->author->name);
-        $time = strtotime($entry->published);
-        $id = $entry->id;
-        echo "<p>Tweet from ".$author.": <strong>".$text."</strong>  <em>Posted ".date('n/j/y g:i a',$time)."</em></p>";
-    }
-
-    return true ;
-}
-
-getTweets('#cats');</code></pre>
+		<pre><code>$hello = 'World';</code></pre>
 		<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
 		<h3>Sub-heading</h3>
 		<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>

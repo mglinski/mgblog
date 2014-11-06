@@ -20,8 +20,6 @@ class ArtisanServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->commands('MGBlog\Console\InspireCommand');
-        $this->commands('MGBlog\Console\ImportFlightclub');
-        $this->commands('MGBlog\Console\ImportSneakerhead');
 	}
 
 	/**
