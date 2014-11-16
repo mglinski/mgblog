@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Http\Middleware;
+<?php namespace Glinski\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -16,9 +16,8 @@ class AuthenticatedWithBasicAuth implements Middleware {
 	/**
 	 * Create a new filter instance.
 	 *
-	 * @param  Guard $auth
-	 *
-	 * @return \MGBlog\Http\Middleware\AuthenticatedWithBasicAuth
+	 * @param  Guard  $auth
+	 * @return void
 	 */
 	public function __construct(Guard $auth)
 	{

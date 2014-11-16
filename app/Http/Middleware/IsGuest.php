@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Http\Middleware;
+<?php namespace Glinski\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -17,9 +17,8 @@ class IsGuest implements Middleware {
 	/**
 	 * Create a new filter instance.
 	 *
-	 * @param  Guard $auth
-	 *
-	 * @return \MGBlog\Http\Middleware\IsGuest
+	 * @param  Guard  $auth
+	 * @return void
 	 */
 	public function __construct(Guard $auth)
 	{

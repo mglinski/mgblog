@@ -1,8 +1,6 @@
-<?php namespace MGBlog\Http\Requests\Auth;
+<?php namespace Glinski\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class LoginRequest extends FormRequest {
+class LoginRequest extends Request {
 
 	/**
 	 * Get the validation rules that apply to the request.

@@ -1,6 +1,6 @@
-<?php namespace MGBlog\Http\Controllers;
+<?php namespace Glinski\Http\Controllers;
 
-class ResumeController extends BaseController {
+class ResumeController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------

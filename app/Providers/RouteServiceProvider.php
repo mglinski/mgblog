@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Providers;
+<?php namespace Glinski\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -6,27 +6,14 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider {
 
 	/**
-	 * The controllers to scan for route annotations.
-	 *
-	 * @var array
-	 */
-	protected $scan = [
-		'MGBlog\Http\Controllers\HomeController',
-		'MGBlog\Http\Controllers\ResumeController',
-		'MGBlog\Http\Controllers\Auth\AuthController',
-		'MGBlog\Http\Controllers\Auth\PasswordController',
-	];
-
-	/**
 	 * All of the application's route middleware keys.
 	 *
 	 * @var array
 	 */
 	protected $middleware = [
-		'auth' => 'MGBlog\Http\Middleware\Authenticated',
-		'auth.basic' => 'MGBlog\Http\Middleware\AuthenticatedWithBasicAuth',
-		'csrf' => 'MGBlog\Http\Middleware\CsrfTokenIsValid',
-		'guest' => 'MGBlog\Http\Middleware\IsGuest',
+		'auth' => 'Glinski\Http\Middleware\Authenticated',
+		'auth.basic' => 'Glinski\Http\Middleware\AuthenticatedWithBasicAuth',
+		'guest' => 'Glinski\Http\Middleware\IsGuest',
 	];
 
 	/**
@@ -50,7 +37,10 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function map(Router $router)
 	{
-		require app_path('Http/routes.php');
+		$router->group(['namespace' => 'Glinski\Http\Controllers'], function($router)
+		{
+			require app_path('Http/routes.php');
+		});
 	}
 
 }

@@ -1,4 +1,4 @@
-<?php namespace MGBlog;
+<?php namespace Glinski;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;

@@ -1,5 +1,5 @@
 <div class="navbar navbar-inverse navbar-static-top navbar-default" style="margin-bottom: 0;">
-
+<div class="container"><div class="row">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 			<span class="icon-bar"></span>
@@ -45,5 +45,7 @@
 		</ul>
 		-->
 
+	</div>
+	</div>
 	</div>
 </div>

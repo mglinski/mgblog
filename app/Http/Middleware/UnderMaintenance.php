@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Http\Middleware;
+<?php namespace Glinski\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Response;
@@ -17,9 +17,8 @@ class UnderMaintenance implements Middleware {
 	/**
 	 * Create a new filter instance.
 	 *
-	 * @param  Application $app
-	 *
-	 * @return \MGBlog\Http\Middleware\UnderMaintenance
+	 * @param  Application  $app
+	 * @return void
 	 */
 	public function __construct(Application $app)
 	{

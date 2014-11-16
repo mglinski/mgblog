@@ -1,6 +1,6 @@
-<?php namespace MGBlog\Http\Controllers;
+<?php namespace Glinski\Http\Controllers;
 
-class HomeController extends BaseController {
+class HomeController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------

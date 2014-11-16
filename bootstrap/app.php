@@ -26,14 +26,19 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
-$app->bind(
+$app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'MGBlog\Http\Kernel'
+	'Glinski\Http\Kernel'
 );
 
-$app->bind(
+$app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
-	'MGBlog\Console\Kernel'
+	'Glinski\Console\Kernel'
+);
+
+$app->singleton(
+	'Illuminate\Contracts\Debug\ExceptionHandler',
+	'Illuminate\Foundation\Debug\ExceptionHandler'
 );
 
 /*

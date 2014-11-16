@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Console\Commands;
+<?php namespace Glinski\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

@@ -1,4 +1,4 @@
-<?php namespace MGBlog\Http;
+<?php namespace Glinski\Http;
 
 use Exception;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -11,13 +11,13 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $middleware = [
-		'MGBlog\Http\Middleware\UnderMaintenance',
+		'Glinski\Http\Middleware\UnderMaintenance',
 		'Illuminate\Cookie\Middleware\EncryptCookies',
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToRequest',
 		'Illuminate\Session\Middleware\ReadSession',
 		'Illuminate\Session\Middleware\WriteSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'MGBlog\Http\Middleware\VerifyCsrfToken',
+		'Glinski\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -36,7 +36,8 @@ class Kernel extends HttpKernel {
 		}
 		catch (Exception $e)
 		{
-			throw $e;
+			$this->reportException($e);
+			return $this->renderException($request, $e);
 		}
 	}
 
