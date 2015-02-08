@@ -1,10 +1,22 @@
 <?php
 
-$router->get("/", ['as' => "home", 'uses' => 'HomeController@index']);
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
 
-$router->get("about", ['as' => "about", 'uses' => 'HomeController@about']);
 
-$router->get("resume", ['as' => "resume", 'uses' => 'ResumeController@index']);
+Route::get("/", ['as' => "home", 'uses' => 'HomeController@index']);
+
+Route::get("about", ['as' => "about", 'uses' => 'HomeController@about']);
+
+Route::get("resume", ['as' => "resume", 'uses' => 'ResumeController@index']);
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +28,8 @@ $router->get("resume", ['as' => "resume", 'uses' => 'ResumeController@index']);
 | passwords for your users. You may modify or remove these files.
 |
 */
-$router->controller('auth', 'AuthController');
-$router->controller('password', 'PasswordController');
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);

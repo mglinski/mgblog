@@ -1,1 +1,1 @@
-<script type="text/javascript" src="{{{ elixir('js/all.js') }}}"></script>
+<script type="text/javascript" src="{{{ URL::to('/dist/js/main.min.js') }}}"></script>

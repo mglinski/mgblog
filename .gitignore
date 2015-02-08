@@ -29,8 +29,4 @@ _ide_helper.php
 .env.*
 
 # Public Bower built resources
-/public/img/*
-/public/fonts/*
-/public/css/*
-/public/js/*
-/public/build/*
+/public/dist/*

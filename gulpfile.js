@@ -2,6 +2,14 @@ var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
+var autoprefixer = require('gulp-autoprefixer');
+var minifycss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var notify = require('gulp-notify');
+var cache = require('gulp-cache');
+var replace = require('gulp-replace');
 
 /*
  |----------------------------------------------------------------
@@ -16,112 +24,136 @@ var del = require('del');
 
 // -----------------------------------------------
 
-// Path Config for deployments
+/**
+ * Path Settings
+ */
 var settings = {
 	images: 'img/',
 	fonts: 'fonts/',
 	css: 'css/',
-	less: 'less/',
 	js: 'js/',
-	assets: 'resources/assets/',
-	vendor: 'vendor/',
-	'public': 'public/'
+	"public": 'public/dist/',
+	"private": 'resources/assets/',
+	"bower": 'resources/assets/vendor/'
 };
 
-// Path Config for deployments
+/**
+ * Path Object
+ */
 var paths = {
 	'dev': {
 		'less': [
 			'app.less',
 		],
-		'js': [
-			settings.vendor + 'jquery/dist/jquery.js',
-			settings.vendor + 'modernizr/modernizr.js',
-			settings.vendor + 'bootstrap/dist/js/bootstrap.js',
+		'css': [
+			settings.private + settings.css + '**/*.css',
 		],
-		'js_move': [],
+		'js': [
+			settings.bower + 'jquery/dist/jquery.js',
+			settings.bower + 'modernizr/modernizr.js',
+			settings.bower + 'bootstrap/dist/js/bootstrap.js',
+			settings.bower + 'highlightjs/highlight.pack.js',
+			// settings.private + settings.js + '**/*.js', // Need to fix bower includes here :(
+		],
 		'fonts': [
-			settings.assets + settings.vendor + 'fontawesome/fonts/*',
-			settings.assets + settings.vendor + 'bootstrap/fonts/*',
-
-			settings.assets + settings.fonts + '**/*'
+			settings.bower + 'fontawesome/fonts/*',
+			settings.bower + 'bootstrap/fonts/*',
+			settings.private + settings.fonts + '**/*'
 		],
 		'img': [
-			settings.assets + settings.images + '**/*',
+			settings.private + settings.images + '**/*',
 		]
 	},
 	'production': {
 		'fonts': settings.public + settings.fonts,
 		'img': settings.public + settings.images,
 		'css': settings.public + settings.css,
-		'js': settings.public + settings.js,
-		'js_move': settings.public + settings.js
+		'js': settings.public + settings.js
 	}
 };
 
-elixir.extend('files', function (src, output)
-{
-	gulp.task('move', function ()
-	{
-		gulp.src(src).pipe(gulp.dest(output));
+/**
+ *
+ */
+elixir.extend('scripts_new', function (src, output)  {
+	gulp.task('scripts_new', function() {
+		return gulp.src(src)
+			//.pipe(jshint('.jshintrc'))
+			//.pipe(jshint.reporter('default'))
+			.pipe(concat('main.js'))
+			.pipe(gulp.dest(output))
+			.pipe(rename({suffix: '.min'}))
+			.pipe(uglify())
+			.pipe(gulp.dest(output))
+			;
 	});
-	return this.queueTask('move');
+	return this.queueTask('scripts_new');
 });
 
-gulp.task('clean', function(cb) {
-	// You can use multiple globbing patterns as you would with `gulp.src`
-	del(['build'], cb);
+/**
+ *
+ */
+elixir.extend('styles_new', function (src, output) {
+	gulp.task('styles_new', function() {
+		return gulp.src(src)
+			.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+			.pipe(gulp.dest(output))
+			.pipe(concat('main.css'))
+			.pipe(rename({suffix: '.min'}))
+			.pipe(minifycss())
+			.pipe(gulp.dest(output))
+			;
+	});
+	return this.queueTask('styles_new');
 });
 
-elixir.extend('images', function (src, output)
-{
+/**
+ *
+ */
+elixir.extend('images_new', function (src, output) {
 	// Copy all static images
-	gulp.task('images', ['clean'], function() {
+	gulp.task('images_new', function() {
 		return gulp.src(src)
-			// Pass in options to the task
-			.pipe(imagemin({optimizationLevel: 5}))
-			.pipe(gulp.dest(output));
+			.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+			.pipe(gulp.dest(output))
+			;
 	});
-	return this.queueTask('images');
+	return this.queueTask('images_new');
 });
 
-
-elixir.extend('fonts', function (src, output)
-{
+/**
+ *
+ */
+elixir.extend('fonts', function (src, output) {
 	// Copy all static fonts
-	gulp.task('fonts', ['clean'], function() {
+	gulp.task('fonts', function() {
 		return gulp.src(src)
-			.pipe(gulp.dest(output));
+			.pipe(gulp.dest(output))
+			;
 	});
 	return this.queueTask('fonts');
 });
-elixir.extend('scriptsRaw', function (src, output)
-{
-	// Copy all static scripts
-	gulp.task('scriptsRaw', ['clean'], function() {
-		return gulp.src(src)
-			.pipe(gulp.dest(output));
+
+/**
+ *
+ */
+elixir.extend('clean', function (src, output) {
+	gulp.task('clean', function() {
+		del([paths.production.css, paths.production.js, paths.production.img, paths.production.fonts], src)
 	});
-	return this.queueTask('scriptsRaw');
+	return this.queueTask('clean');
 });
 
-// ------------------------------------------------
-
-// Actual Elixir Configs
-elixir(function (mix)
-{
+/**
+ *
+ */
+elixir(function (mix) {
 	mix
-		.less(paths.dev.less)
-		.scripts(paths.dev.js, settings.assets, paths.production.js)
-		.version([
-			paths.production.css + 'app.css',
-			paths.production.js + 'all.js'
-		])
+		.clean()
+		.less(paths.dev.less, paths.production.css)
+		.styles_new(paths.dev.css, paths.production.css)
+		.scripts_new(paths.dev.js, paths.production.js)
 		.fonts(paths.dev.fonts, paths.production.fonts) // move fonts
-		.images(paths.dev.img, paths.production.img) // move images
-		.scriptsRaw(paths.dev.js_move, paths.production.js_move) // move js files
-
-	//.routes()
-	//.events();
-	//.phpUnit();
+		.images_new(paths.dev.img, paths.production.img) // move images
+	;
 });

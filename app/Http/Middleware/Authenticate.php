@@ -1,10 +1,9 @@
-<?php namespace Glinski\Http\Middleware;
+<?php namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Routing\Middleware;
 
-class AuthenticatedWithBasicAuth implements Middleware {
+class Authenticate {
 
 	/**
 	 * The Guard implementation.
@@ -33,7 +32,19 @@ class AuthenticatedWithBasicAuth implements Middleware {
 	 */
 	public function handle($request, Closure $next)
 	{
-		return $this->auth->basic() ?: $next($request);
+		if ($this->auth->guest())
+		{
+			if ($request->ajax())
+			{
+				return response('Unauthorized.', 401);
+			}
+			else
+			{
+				return redirect()->guest('auth/login');
+			}
+		}
+
+		return $next($request);
 	}
 
 }

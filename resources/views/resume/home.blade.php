@@ -16,7 +16,7 @@
 
 		<h3 id="summary">SUMMARY</h3>
 		<p class="resumeLead">
-			8 years Webmaster/Web Development/LAMP experience. 6+ years of experience building enterprise level PHP/MySQL
+			9 years Webmaster/Web Development/LAMP experience. 6+ years of experience building enterprise level PHP/MySQL
 			applications with security and scalability in mind. Ability to solve critical problems with ease and finesse.
 			Very personable, very high-level written/verbal communication skills. Excellent team player with the ability
 			to think outside the box, create new ideas and innovate at a fast pace. Proven Leadership skills and a strong
@@ -28,7 +28,7 @@
 			<h4 id="skills-languages">Languages</h4>
             <ul>
                 <li>Proficient in: PHP v5.5, Javascript, HTML5, CSS3</li>
-                <li>Experience with: Java, Flash, Perl, C#, VB.net, ASP.net, Microsoft Visual Basic&reg; 6</li>
+                <li>Experience with: Python, Java, C#, ASP.net</li>
             </ul>
 		</div>
 
@@ -36,7 +36,8 @@
 			<h4 id="skills-software">Software</h4>
 			<ul>
 				<li>Database: MySQL, MSSQL, Postgres, SQLite</li>
-				<li>Platforms: Debian, CentOS, Mac OSX Server, MS Server 2008/2012</li>
+				<li>Operating Systems: Debian, CentOS, Mac OSX Server, MS Server 2008/2012</li>
+				<li>Software Platforms: Web, Command Line</li>
 			</ul>
 		</div>
 
@@ -46,12 +47,11 @@
 				<div class="pull-right"><strong>2013 - Current</strong></div>
 				Zumba Fitness &ndash; Latin Inspired Fitness and Lifestyle Company
 			</h5>
-			<h6><em>Software Engineer</em></h6>
+			<h6><em>Software Engineer</em> <a href="https://zumba.com">Zumba.com</a></h6>
 			<ul>
 				<li>Just started working here and I already love it :)</li>
 			</ul>
 		</div>
-
 
 		<div class="resumeItem" id="experience-aampp">
 			<h5>
@@ -111,7 +111,6 @@
                 <li>Effective Second In Command of Brave Collective Alliance</li>
                 <li>Heads up communications and friendly entity coordination</li>
                 <li>Helping bootstrap, organize and direct internal intelligence agency</li>
-                <li>Currently on hiatus</li>
             </ul>
         </div>
         <div class="resumeItem" id="projects-brave-it">

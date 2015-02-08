@@ -1,6 +1,6 @@
 {
-  "name": "MGBlog",
-  "version": "0.1.0",
+  "name": "mg-blog",
+  "version": "0.2.0",
   "description": "",
   "main": "gulpfile.js",
   "keywords": [
@@ -28,10 +28,15 @@
     "gulp-shell": "^0.2.9",
     "gulp-uglify": "^1.0.1",
     "gulp-util": "^3.0.1",
+    "gulp-jshint": "1.9.2",
+    "gulp-rename": "1.2.0",
+    "gulp-cache": "0.2.4",
+    "gulp-replace": "0.5.2",
     "install": "^0.1.7",
-    "laravel-elixir": "^0.4.7",
+    "laravel-elixir": "^0.10.7",
     "npm": "^2.1.2",
     "require-dir": "^0.1.0",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "jshint": "2.6.0"
   }
 }
