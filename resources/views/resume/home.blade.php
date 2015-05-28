@@ -102,7 +102,7 @@
 		<h3 id="projects">PROJECTS</h3>
 		<div class="resumeItem" id="projects-brave-diplo">
             <h5>
-                <div class="pull-right"><strong>2013 - Current</strong></div>
+                <div class="pull-right"><strong>2013 - 2015</strong></div>
                 Brave Collective &ndash; Head Diplomat
             </h5>
             <h6><em>MMO Space Empire Simulator</em> &ndash; <a href="https://www.youtube.com/watch?v=FE9lVhLNmcI" target="_blank">Quick Overview</a> </h6>
@@ -115,17 +115,17 @@
         </div>
         <div class="resumeItem" id="projects-brave-it">
             <h5>
-                <div class="pull-right"><strong>2013 - 2013</strong></div>
+                <div class="pull-right"><strong>2013 - Current</strong></div>
                 Brave Collective &ndash; Head of IT
             </h5>
             <h6><em>MMO Space Empire Simulator</em> &ndash; <a href="https://www.youtube.com/watch?v=FE9lVhLNmcI" target="_blank">Quick Overview</a> &ndash; <a href="https://github.com/bravecollective" target="_blank">Github</a> </h6>
             <ul>
                 <li>Primary responsibilities include managing and building IT infrastructure for the second largest player organization in Eve Online.</li>
-                <li>Managed mumble server for upwards of 600 active players at once</li>
+                <li>Managed mumble server for upwards of 900 active players at once</li>
                 <li>Created tool to map and track player owned structures and in-game resources.</li>
-                <li>Created voting system for space democracy positions in our leadership.</li>
+                <li>Manage and support core authenticateion system that all our tools integrate with for OAUTH data access</li>
                 <li>Developing internal intelligence agency portal and dissemination tools for active intel agents and handlers.</li>
-                <li>Manage infrastructure that all IT for Brave Collective runs on.</li>
+                <li>Manage infrastructure and hardware that all IT for Brave Collective runs on.</li>
             </ul>
         </div>
         <div class="resumeItem" id="projects-xtrafile">
