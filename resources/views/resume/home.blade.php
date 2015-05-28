@@ -44,7 +44,7 @@
 		<h3 id="experience">EXPERIENCE</h3>
 		<div class="resumeItem" id="experience-zumba">
 			<h5>
-				<div class="pull-right"><strong>2013 - Current</strong></div>
+				<div class="pull-right"><strong>2014 - Current</strong></div>
 				Zumba Fitness &ndash; Latin Inspired Fitness and Lifestyle Company
 			</h5>
 			<h6><em>Software Engineer</em> <a href="https://zumba.com">Zumba.com</a></h6>
@@ -55,7 +55,7 @@
 
 		<div class="resumeItem" id="experience-aampp">
 			<h5>
-				<div class="pull-right"><strong>2011 - 2013</strong></div>
+				<div class="pull-right"><strong>2011 - 2014</strong></div>
 				AAMPP.net &ndash; Music Focused Social Network
 			</h5>
 			<h6><em>Architect, Lead Developer - Full Stack Software Development, Server Management, Support</em></h6>
