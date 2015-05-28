@@ -11,7 +11,7 @@
 
 		<title>
 		@section('site-title')
-		MGBlog
+		Resume - Matthew Glinski
 		@show</title>
 
 		@section('site-head')
