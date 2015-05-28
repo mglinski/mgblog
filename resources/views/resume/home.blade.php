@@ -27,7 +27,7 @@
 		<div class="resumeItem">
 			<h4 id="skills-languages">Languages</h4>
             <ul>
-                <li>Proficient in: PHP v5.5, Javascript, HTML5, CSS3</li>
+                <li>Proficient in: PHP v5.6, Javascript, HTML5, CSS3</li>
                 <li>Experience with: Python, Java, C#, ASP.net</li>
             </ul>
 		</div>
@@ -35,8 +35,8 @@
 		<div class="resumeItem">
 			<h4 id="skills-software">Software</h4>
 			<ul>
-				<li>Database: MySQL, MSSQL, Postgres, SQLite</li>
-				<li>Operating Systems: Debian, CentOS, Mac OSX Server, MS Server 2008/2012</li>
+				<li>Database: MySQL, Postgres, SQLite, MSSQL</li>
+				<li>Operating Systems: Debian, Mac OSX Server, FreeBSD, Other Linux Variants, MS Server 2008/2012</li>
 				<li>Software Platforms: Web, Command Line</li>
 			</ul>
 		</div>
@@ -49,7 +49,8 @@
 			</h5>
 			<h6><em>Software Engineer</em> <a href="https://zumba.com">Zumba.com</a></h6>
 			<ul>
-				<li>Just started working here and I already love it :)</li>
+				<li>I have been working here for 7 months.</li>
+				<li>Expanded details will come soon.</li>
 			</ul>
 		</div>
 
